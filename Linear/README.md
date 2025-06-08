@@ -9,37 +9,21 @@ A clean, minimal implementation of **Simple Linear Regression** using only Pytho
 Linear Regression models the relationship between a **dependent variable** \(y\) and a **single independent variable** \(x\) by fitting a straight line:
 
 \[
-\hat{y} = w\,x + b
+\hat{y} = wx + b
 \]
 
 - **\(w\)** (weight/slope) controls the steepness of the line  
 - **\(b\)** (bias/intercept) shifts the line up or down  
 
-We choose \(w\) and \(b\) to minimize the **Mean Squared Error (MSE)**:
+## Mean Squared Error (MSE)
+- Measures the average squared difference between predictions and actual values, highlighting larger errors.  
+- Provides a smooth, differentiable metric that’s easy to optimize and interpret.  
+- Lower MSE indicates a tighter fit and better overall model performance.  
 
-\[
-J(w, b) = \frac{1}{n} \sum_{i=1}^{n} \bigl(y_i - \hat{y}_i\bigr)^{2}
-\]
-
-Using **Gradient Descent**, parameters are updated iteratively:
-
-\[
-w \;\;:=\;\; w - \alpha \,\frac{\partial J}{\partial w}, 
-\quad
-b \;\;:=\;\; b - \alpha \,\frac{\partial J}{\partial b}
-\]
-
-Where:
-
-\[
-\frac{\partial J}{\partial w}
-= -\frac{2}{n} \sum_{i=1}^{n} x_i \,(y_i - \hat{y}_i), 
-\quad
-\frac{\partial J}{\partial b}
-= -\frac{2}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)
-\]
-
----
+## Gradient Descent
+- Iteratively updates model parameters to minimize the loss by moving “downhill” on the error surface.  
+- Controlled by a learning rate that balances update size and convergence stability.  
+- Scales effectively to large datasets and high-dimensional problems.  
 
 ## ✅ Advantages
 
@@ -79,6 +63,3 @@ Where:
   Analyzing test scores vs. study time, demographic trends.
 
 ---
-
-## 📂 Folder Contents
-
